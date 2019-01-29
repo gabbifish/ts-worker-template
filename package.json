@@ -1,0 +1,37 @@
+{
+  "name": "dcv-orchestrator",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker that runs a DCV quorum orchestrator",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.cfops.it:7999/CRYPTO/dcv-orchestrator"
+  },
+  "keywords": [
+    "dcv",
+    "certificates"
+  ],
+  "author": "Gabbi Fisher",
+  "license": "ISC",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "prettier": "1.15.3",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2",
+    "workers-preview": "^1.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build:watch": "webpack --watch",
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "fmt": "prettier --single-quote --trailing-comma es5 --write 'src/*.ts'",
+    "preview": "workers-preview < dist/bundle.js",
+    "deploy": "./deploy.sh"
+  },
+  "dependencies": {
+    "@types/xml2js": "^0.4.3",
+    "xml-to-json-promise": "0.0.3"
+  }
+}
